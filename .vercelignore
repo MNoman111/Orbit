@@ -1,0 +1,9 @@
+node_modules
+**/node_modules
+**/dist
+**/*.test.ts
+server/src/__tests__
+.env
+**/.env
+*.log
+.DS_Store

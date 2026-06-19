@@ -1,0 +1,29 @@
+{
+  "name": "orbit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Orbit — multi-tenant project management SaaS (Vercel deployment root)",
+  "comments": "This root package.json exists so Vercel can bundle the /api serverless function with the backend's runtime dependencies. Local development still uses server/ and web/ independently.",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.0",
+    "pino": "^9.4.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.0",
+    "@vercel/node": "^3.2.0",
+    "typescript": "^5.5.0"
+  }
+}
