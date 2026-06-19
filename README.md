@@ -136,7 +136,8 @@ Every push to `main` redeploys automatically.
 
 ### How it fits together
 
-- `vercel.json` builds the frontend (`web/`, static) and the API (`api/index.ts`, serverless), then routes `/api/*` and `/healthz` to the function and serves the SPA for everything else.
+- `vercel.json` uses a `buildCommand` to build the frontend into `web/dist` (served as static files), while Vercel auto-detects `api/index.ts` as a serverless function.
+- `rewrites` send `/api/*` to the function (preserving the original URL so Express matches its `/api/v1/...` routes) and fall back to `/index.html` for client-side routes.
 - `api/index.ts` wraps the Express app and reuses a cached Mongo connection across warm invocations (`server/src/config/serverlessDb.ts`).
 - The frontend calls the API with the relative path `/api/v1`, so no API URL needs configuring in production.
 
